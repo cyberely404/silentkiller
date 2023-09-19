@@ -52,7 +52,7 @@ First, you'll need to [install go](https://golang.org/doc/install).
 
 Then run this command to download + compile silentkiller:
 ```
-go install github.com/hakluke/silentkiller@latest
+go install github.com/cyberely404/silentkiller@latest
 ```
 
 You can now run `~/go/bin/silentkiller`. If you'd like to just run `silentkiller` without the full path, you'll need to `export PATH="~/go/bin/:$PATH"`. You can also add this line to your `~/.bashrc` file if you'd like this to persist.
@@ -60,7 +60,7 @@ You can now run `~/go/bin/silentkiller`. If you'd like to just run `silentkiller
 ### Docker Install (from dockerhub)
 
 ```
-echo https://www.google.com | docker run --rm -i hakluke/silentkiller:v2 -subs
+echo https://www.google.com | docker run --rm -i cyberely404/silentkiller:v2 -subs
 ```
 
 ### Local Docker Install
@@ -68,10 +68,10 @@ echo https://www.google.com | docker run --rm -i hakluke/silentkiller:v2 -subs
 It's much easier to use the dockerhub method above, but if you'd prefer to run it locally:
 
 ```
-git clone https://github.com/hakluke/silentkiller
+git clone https://github.com/cyberely404/silentkiller
 cd silentkiller
-sudo docker build -t hakluke/silentkiller .
-sudo docker run --rm -i hakluke/silentkiller --help
+sudo docker build -t cyberely404/silentkiller .
+sudo docker run --rm -i cyberely404/silentkiller --help
 ```
 ### Kali Linux: Using apt
 
@@ -84,7 +84,7 @@ sudo apt install silentkiller
 Then, to run silentkiller:
 
 ```
-echo https://www.google.com | docker run --rm -i hakluke/silentkiller -subs
+echo https://www.google.com | docker run --rm -i cyberely404/silentkiller -subs
 ```
 
 ## Command-line options
