@@ -1,4 +1,4 @@
-module github.com/hakluke/hakrawler
+module github.com/cyberely404/silentkiller
 
 go 1.16
 
