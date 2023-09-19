@@ -1,4 +1,4 @@
-# Hakrawler
+# silentkiller
 
 Fast golang web crawler for gathering URLs and JavaScript file locations. This is basically a simple implementation of the awesome Gocolly library.
 
@@ -7,31 +7,31 @@ Fast golang web crawler for gathering URLs and JavaScript file locations. This i
 Single URL:
 
 ```
-echo https://google.com | hakrawler
+echo https://google.com | silentkiller
 ```
 
 Multiple URLs:
 
 ```
-cat urls.txt | hakrawler
+cat urls.txt | silentkiller
 ```
 
 Timeout for each line of stdin after 5 seconds:
 
 ```
-cat urls.txt | hakrawler -timeout 5
+cat urls.txt | silentkiller -timeout 5
 ```
 
 Send all requests through a proxy:
 
 ```
-cat urls.txt | hakrawler -proxy http://localhost:8080
+cat urls.txt | silentkiller -proxy http://localhost:8080
 ```
 
 Include subdomains:
 
 ```
-echo https://google.com | hakrawler -subs
+echo https://google.com | silentkiller -subs
 ```
 
 > Note: a common issue is that the tool returns no URLs. This usually happens when a domain is specified (https://example.com), but it redirects to a subdomain (https://www.example.com). The subdomain is not included in the scope, so the no URLs are printed. In order to overcome this, either specify the final URL in the redirect chain or use the `-subs` option to include subdomains.
@@ -41,7 +41,7 @@ echo https://google.com | hakrawler -subs
 Get all subdomains of google, find the ones that respond to http(s), crawl them all.
 
 ```
-echo google.com | haktrails subdomains | httpx | hakrawler
+echo google.com | haktrails subdomains | httpx | silentkiller
 ```
 
 ## Installation
@@ -50,17 +50,17 @@ echo google.com | haktrails subdomains | httpx | hakrawler
 
 First, you'll need to [install go](https://golang.org/doc/install).
 
-Then run this command to download + compile hakrawler:
+Then run this command to download + compile silentkiller:
 ```
-go install github.com/hakluke/hakrawler@latest
+go install github.com/hakluke/silentkiller@latest
 ```
 
-You can now run `~/go/bin/hakrawler`. If you'd like to just run `hakrawler` without the full path, you'll need to `export PATH="~/go/bin/:$PATH"`. You can also add this line to your `~/.bashrc` file if you'd like this to persist.
+You can now run `~/go/bin/silentkiller`. If you'd like to just run `silentkiller` without the full path, you'll need to `export PATH="~/go/bin/:$PATH"`. You can also add this line to your `~/.bashrc` file if you'd like this to persist.
 
 ### Docker Install (from dockerhub)
 
 ```
-echo https://www.google.com | docker run --rm -i hakluke/hakrawler:v2 -subs
+echo https://www.google.com | docker run --rm -i hakluke/silentkiller:v2 -subs
 ```
 
 ### Local Docker Install
@@ -68,28 +68,28 @@ echo https://www.google.com | docker run --rm -i hakluke/hakrawler:v2 -subs
 It's much easier to use the dockerhub method above, but if you'd prefer to run it locally:
 
 ```
-git clone https://github.com/hakluke/hakrawler
-cd hakrawler
-sudo docker build -t hakluke/hakrawler .
-sudo docker run --rm -i hakluke/hakrawler --help
+git clone https://github.com/hakluke/silentkiller
+cd silentkiller
+sudo docker build -t hakluke/silentkiller .
+sudo docker run --rm -i hakluke/silentkiller --help
 ```
 ### Kali Linux: Using apt
 
-Note: This will install an older version of hakrawler without all the features, and it may be buggy. I recommend using one of the other methods.
+Note: This will install an older version of silentkiller without all the features, and it may be buggy. I recommend using one of the other methods.
 
 ```sh
-sudo apt install hakrawler
+sudo apt install silentkiller
 ```
 
-Then, to run hakrawler:
+Then, to run silentkiller:
 
 ```
-echo https://www.google.com | docker run --rm -i hakluke/hakrawler -subs
+echo https://www.google.com | docker run --rm -i hakluke/silentkiller -subs
 ```
 
 ## Command-line options
 ```
-Usage of hakrawler:
+Usage of silentkiller:
   -d int
     	Depth to crawl. (default 2)
   -dr
