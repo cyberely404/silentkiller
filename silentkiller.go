@@ -63,7 +63,7 @@ func main() {
 	// Check for stdin input
 	stat, _ := os.Stdin.Stat()
 	if (stat.Mode() & os.ModeCharDevice) != 0 {
-		fmt.Fprintln(os.Stderr, "No urls detected. Hint: cat urls.txt | hakrawler")
+		fmt.Fprintln(os.Stderr, "No urls detected. Hint: cat urls.txt | silentkiller")
 		os.Exit(1)
 	}
 
